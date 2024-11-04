@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+  },
+  "include": ["**/*.ts", "src/commands/support.ts--dev"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true,
+  }
+}
