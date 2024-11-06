@@ -48,7 +48,7 @@ export default {
                     inline: true
                 },
                 {
-                    name: "<:plug_socket:1299744233120465057>  Websocket heartbeat",
+                    name: "<:plug_socket:1299744233120465057> Websocket heartbeat",
                     value: [-1,0].includes(interaction.client.ws.ping) ? 'Initializing...' : `${interaction.client.ws.ping}ms`,
                     inline: true
                 },

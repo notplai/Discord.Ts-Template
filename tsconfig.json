@@ -8,7 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
   },
-  "include": ["**/*.ts", "src/commands/support.ts--dev"],
+  "include": ["**/*.ts", "src/commands/support.ts--dev", "src/commands/voice/upload.ts--disabled", "src/commands/voice/play.ts--disabled"],
   "exclude": ["node_modules"],
   "ts-node": {
     "esm": true,

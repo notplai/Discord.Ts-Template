@@ -34,7 +34,7 @@ function whichPort(ip: string): Promise<string> {
 export default {
     data: new SlashCommandBuilder()
         .setName("netmin")
-        .setDescription('netmin is network uitilies commands like nettools but for available for special members only...')
+        .setDescription('inet is network uitilies commands like nettools but for available for special members only...')
 
         .addSubcommand(portstatus => portstatus
             .setName('portstatus')
@@ -209,7 +209,7 @@ ${LANstatus.map(res => `[1;37m[1;42m  Address: ${res.host} [1;37m[2;40m ${re
                         
 
                             Inet_Embed.setAuthor({
-                                name: `${LANstatus.host} (${LANstatus.host == "192.168.1.20" ? "Windows" : LANstatus.host == "192.168.1.22" ? "RaspberryPi" : "UnknownOs"})`
+                                name: `${LANstatus.host}`
                             })
                             .setDescription(`
 \`\`\`bash

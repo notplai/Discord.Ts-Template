@@ -1,4 +1,4 @@
-import { requestTTS } from "./types/tts";
+import { requestTTS } from "../types/tts";
 
 import {
     AutocompleteInteraction,
@@ -10,7 +10,7 @@ import {
     ChannelType,
     PermissionFlagsBits,
 } from "discord.js";
-import { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayer } from '@discordjs/voice';
+import { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayer, getVoiceConnection } from '@discordjs/voice';
 
 import { Buffer } from "node:buffer";
 
@@ -199,7 +199,7 @@ export default {
             content: `Sorry, but the **${modelTTS.replace(/-/g, ' ')}** of ModelTTS is currently unsupported, please stay tuned for its release! **T^T**`
         });
 
-        const connection = joinVoiceChannel({
+        const connection = getVoiceConnection(interaction.guild.id) ?? joinVoiceChannel({
             channelId: channel.id,
             guildId: interaction.guild.id,
             adapterCreator: interaction.guild.voiceAdapterCreator,
@@ -222,7 +222,7 @@ export default {
             .setColor(interaction.user.hexAccentColor || interaction.guild.members.cache.get(interaction.user.id)?.displayHexColor || "Orange")
             // .setFooter({
             //     text: `FlanTTS written by ${NotPlaiProfile?.user.username}`,
-            //     iconURL: NotPlaiProfile?.avatarURL() || NotPlaiProfile?.displayAvatarURL()
+            //     iconURL: NotPlaiProfile?.avatarURL() || NotPlaiProfile?.displayAvatarURL()999
             // })
             .setFields(
                 {
@@ -250,15 +250,6 @@ export default {
 
         await interaction.editReply({
             embeds: [FlanTTSEmbedded],
-        });
-
-        let disconnectTimeout: number | NodeJS.Timeout;
-        player.addListener("stateChange", (oldState, newState) => {
-            // If the player goes idle, set a 5-second timeout to disconnect
-            if (newState.status === "idle") {
-                connection.disconnect();
-            }
-        });
-
+        });99999999999999999
     }
 }
