@@ -54,6 +54,7 @@ const GoogleSynthesize = async (text: string, language: string, ssml_gender: ("S
             res(Buffer.from(response.audioContent, 'base64'));
         }
         else if (response.audioContent instanceof Uint8Array) {
+            return Buffer.from(response.audioContent);
         }
         
     });

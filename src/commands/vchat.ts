@@ -15,16 +15,6 @@ import { createAudioPlayer, createAudioResource, getVoiceConnection, joinVoiceCh
 
 import * as googleTTS from 'google-tts-api';
 
-
-function getValue(object: {name: string, value: string}[], k: any): string | undefined {
-    const v = object.find(item => item.name === k);
-    return v ? v.value : undefined;
-};
-function getKey(object: { name: string, value: string }[], v: any): string | undefined {
-    const k = object.find(item => item.value === v);
-    return k ? k.name : undefined;
-};
-
 // T2S Models & Assets
 const languageCode = [
     {
@@ -73,6 +63,14 @@ const ModelTTSObjectArray = [
     },
 ];
 
+const getValue = (object: {name: string, value: string}[], k: any): string | undefined => {
+    const v = object.find(item => item.name === k);
+    return v ? v.value : undefined;
+};
+const getKey = (object: { name: string, value: string }[], v: any): string | undefined => {
+    const k = object.find(item => item.value === v);
+    return k ? k.name : undefined;
+};
 
 export default {
     data: new SlashCommandBuilder()
